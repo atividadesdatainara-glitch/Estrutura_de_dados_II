@@ -42,3 +42,25 @@ No* criarNo(int valor) {
 
     return novo;
 }
+
+//Etapa 3 — Inserção na ABB
+//A inserção é o coração da árvore.
+//Regras:
+//se o valor for menor → vai para esquerda;
+//se o valor for maior → vai para direita.
+//Implementação
+No* inserir(No *raiz, int valor) {
+    // árvore vazia
+    if (raiz == NULL) {
+        return criarNo(valor);
+    }
+    // inserção à esquerda
+    if (valor < raiz->valor) {
+        raiz->esq = inserir(raiz->esq, valor);
+    }
+    // inserção à direita
+    else if (valor > raiz->valor) {
+        raiz->dir = inserir(raiz->dir, valor);
+    }
+    return raiz;
+}
