@@ -32,3 +32,13 @@ typedef struct No {
 } No;
 
 
+//Etapa 2 — Criando um novo nó
+//Agora criamos uma função para alocar memória para um nó.
+No* criarNo(int valor) {
+    No *novo = (No*) malloc(sizeof(No));
+    novo->valor = valor;
+    novo->esq = NULL;
+    novo->dir = NULL;
+
+    return novo;
+}
